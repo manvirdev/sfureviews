@@ -1,6 +1,6 @@
 # SFU Reviews :zap:
 
-This project is for accepting reviews about profs in Simon Fraser University. My project aims to provide a platform for students to share their experiences with professors and help other students make informed decisions when choosing their courses. I plan to create a system which doesn't do any cencorship to the students ratings. Any unacceptable rating would still be accessible and going to be stored in github to provide transparency.
+This project is for accepting reviews about profs in Simon Fraser University. My project aims to provide a platform for students to share their experiences with professors and help other students make informed decisions when choosing their courses. I plan to create a system which doesn't do any censorship to the students ratings. Any unacceptable rating would still be accessible and going to be stored in github to provide transparency.
 
 ## Technologies Used :hammer:
 My project is built using the following technologies:
