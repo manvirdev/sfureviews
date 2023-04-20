@@ -31,13 +31,10 @@ The following fields are included in the Professor collection:
 
 The *courses* field is an array of objects that contains information about each course taught by the professor, including the course name, unique course identifier, semester in which it's offered, and description.
 
-The *officeHours* field is an array of objects that contains information about each office hour, including the day of the week, start time, and end time.
-
-Sample Data
+### Sample Data
 Here's an example document for a professor in the collection:
 
 ```json
-Copy code
 {
   "id": "1234",
   "name": "John Smith",
@@ -60,18 +57,6 @@ Copy code
   ],
   "researchInterests": ["Machine Learning", "Data Mining"],
   "publications": ["Introduction to Machine Learning", "Data Mining Techniques"],
-  "officeHours": [
-    {
-      "day": "Monday",
-      "start": "9:00am",
-      "end": "11:00am"
-    },
-    {
-      "day": "Wednesday",
-      "start": "2:00pm",
-      "end": "4:00pm"
-    }
-  ]
 }
 ```
 
@@ -79,7 +64,7 @@ Copy code
 To use the Professor collection, you can perform the following operations:
 
 - Insert new professors: Use the insertOne() or insertMany() method to add new professors to the collection.
-- Query professors: Use the find() method to retrieve professors from the collection. You can filter the results by name, department, courses taught, research interests, publications, or office hours.
+- Query professors: Use the find() method to retrieve professors from the collection. You can filter the results by name, department, courses taught, research interests, publications.
 - Update professors: Use the updateOne() or updateMany() method to modify existing professors in the collection.
 - Delete professors: Use the deleteOne() or deleteMany() method to remove professors from the collection.
 
