@@ -1,6 +1,4 @@
-# Collections
-
-## Professor
+# Professor
 
 ### Description
 
