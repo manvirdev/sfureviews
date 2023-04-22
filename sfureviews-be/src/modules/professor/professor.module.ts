@@ -1,5 +1,6 @@
 import { Module } from '@nestjs/common';
 import { MongooseModule } from '@nestjs/mongoose';
+import { LoggerService } from 'src/common/logger/logger.service';
 import { ProfessorController } from 'src/controllers/professor.controller';
 import { ProfessorService } from './professor.services';
 import { Professor, ProfessorSchema } from './schemas/professor.schema';
@@ -11,6 +12,6 @@ import { Professor, ProfessorSchema } from './schemas/professor.schema';
     ]),
   ],
   controllers: [ProfessorController],
-  providers: [ProfessorService],
+  providers: [ProfessorService, LoggerService],
 })
 export class ProfessorModule {}
