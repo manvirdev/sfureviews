@@ -1,5 +1,6 @@
-import { Controller, Get } from '@nestjs/common';
+import { Controller, Get, UseGuards } from '@nestjs/common';
 import { AppService } from '../services/app.service';
+import { AuthGuard } from '@nestjs/passport';
 
 // We can simply create a new controller by using the command: nest g controller [NAME]
 
@@ -10,6 +11,7 @@ export class AppController {
   constructor(private readonly appService: AppService) {}
 
   @Get()
+  @UseGuards(AuthGuard('azure-ad'))
   getHello(): string {
     return this.appService.getStatus();
   }

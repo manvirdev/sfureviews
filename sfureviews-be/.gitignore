@@ -5,6 +5,7 @@
 
 #config
 config/
+.env
 
 # Logs
 logs
