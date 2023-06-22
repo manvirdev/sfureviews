@@ -18,8 +18,16 @@ export class StudentService {
     return this.studentModel.find().exec();
   }
 
-  async findOne(email: string): Promise<Student> {
+  async findById(id: string): Promise<Student> {
+    return this.studentModel.findById(id).exec();
+  }
+
+  async findByEmail(email: string): Promise<Student> {
     return this.studentModel.findOne({ email }).exec();
+  }
+
+  async findByName(name: string): Promise<Student[]> {
+    return this.studentModel.find({ name }).exec();
   }
 
   async update(email: string, updateStudentDto: any): Promise<Student> {

@@ -13,5 +13,6 @@ import { Professor, ProfessorSchema } from './schemas/professor.schema';
   ],
   controllers: [ProfessorController],
   providers: [ProfessorService, LoggerService],
+  exports: [ProfessorService]
 })
 export class ProfessorModule {}

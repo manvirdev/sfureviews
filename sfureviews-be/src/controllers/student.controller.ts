@@ -27,7 +27,7 @@ export class StudentController {
   @Get(':id')
   async findOne(@Param('id') id: string): Promise<Student> {
     this.loggerService.log(`Getting student with ID ${id}...`);
-    return this.studentService.findOne(id);
+    return this.studentService.findById(id);
   }
 
   @Put(':id')
