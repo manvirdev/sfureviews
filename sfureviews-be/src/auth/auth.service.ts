@@ -22,7 +22,7 @@ export class AuthService extends PassportStrategy(BearerStrategy, 'azure-ad') {
 
   async validate(payload: any) {
     // Perform validation logic to check if the user exists in the student or professor collection
-    const student = await this.studentService.findOneByEmail(payload.email);
+    const student = await this.studentService.findByEmail(payload.email);
     const professor = await this.professorService.findOneByEmail(payload.email);
 
     if (student) {

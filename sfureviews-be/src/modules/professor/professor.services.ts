@@ -20,8 +20,16 @@ export class ProfessorService {
     return this.professorModel.find().exec();
   }
 
-  async findOne(id: string): Promise<Professor> {
+  async findOneById(id: string): Promise<Professor> {
     return this.professorModel.findById(id).exec();
+  }
+
+  async findOneByEmail(email: string): Promise<Professor> {
+    return this.professorModel.findOne({ email }).exec();
+  }
+
+  async findOneByName(name: string): Promise<Professor> {
+    return this.professorModel.findOne({ name }).exec();
   }
 
   async update(id: string, updateProfessorDto: UpdateProfessorDto): Promise<Professor> {

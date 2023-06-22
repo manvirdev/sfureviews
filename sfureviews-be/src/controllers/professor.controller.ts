@@ -30,7 +30,7 @@ export class ProfessorController {
   async findOne(@Param('id') id: string): Promise<Professor> {
     // Example usage of logger
     this.loggerService.log(`Getting professor with ID ${id}...`);
-    return this.professorService.findOne(id);
+    return this.professorService.findOneById(id);
   }
 
   @Put(':id')
