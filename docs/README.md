@@ -8,6 +8,7 @@ My project is built using the following technologies:
 ### BackEnd
 - NestJS
 - MongoDB
+- Azure Active Directory
 
 ### FrontEnd
 - React
