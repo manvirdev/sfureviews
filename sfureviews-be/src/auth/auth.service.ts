@@ -4,12 +4,14 @@ import { PassportStrategy } from '@nestjs/passport';
 import { env } from '../common/env';
 import { StudentService } from '../modules/student/student.services';
 import { ProfessorService } from '../modules/professor/professor.services';
+import { HttpService } from '@nestjs/axios'; // import the HttpService
 
 @Injectable()
 export class AuthService extends PassportStrategy(BearerStrategy, 'azure-ad') {
   constructor(
     private readonly studentService: StudentService,
-    private readonly professorService: ProfessorService
+    private readonly professorService: ProfessorService,
+    private readonly httpService: HttpService, // inject the HttpService
   ) {
     super({
       identityMetadata: `https://login.microsoftonline.com/${env.tenantId}/v2.0/.well-known/openid-configuration`,
@@ -36,6 +38,27 @@ export class AuthService extends PassportStrategy(BearerStrategy, 'azure-ad') {
     }
 
     // User not found in the student or professor collection
+
     return null;
   }
+
+  public createUserInAzureAD(email: string, displayName: string, password: string): Promise<any> {
+    return new Promise((resolve, reject) => {
+      this.httpService.post('https://graph.microsoft.com/v1.0/users', {
+        userPrincipalName: email,
+        accountEnabled: true,
+        displayName: displayName,
+        mailNickname: displayName,
+        passwordProfile: {
+          forceChangePasswordNextSignIn: true,
+          password: password,
+        },
+      }).subscribe({
+        next: response => resolve(response.data),
+        error: err => reject(err)
+      });
+    });
+  }
+  
+
 }

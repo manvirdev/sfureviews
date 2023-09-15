@@ -1,13 +1,13 @@
-export class CreateProfessorDto {
-    readonly name: string;
+import { CreateUserDto } from "src/users/dtos/create-user.dto";
+
+export class CreateProfessorDto extends CreateUserDto {
     readonly department: string;
-    readonly email: string;
-    readonly phone?: string;
     readonly courses?: {
       courseName: string;
       courseId: string;
       semester: string;
       description?: string;
+      year?: number;
     }[];
     readonly researchInterests?: string[];
     readonly publications?: string[];
@@ -16,5 +16,5 @@ export class CreateProfessorDto {
       start: string;
       end: string;
     }[];
-  }
-  
+
+}

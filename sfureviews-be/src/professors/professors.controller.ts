@@ -1,8 +1,8 @@
 import { Controller, Get, Post, Put, Delete, Body, Param } from '@nestjs/common';
 import { ProfessorService } from '../modules/professor/professor.services';
-import { CreateProfessorDto } from '../modules/professor/dtos/create-professor.dto';
-import { UpdateProfessorDto } from '../modules/professor/dtos/update-professor.dto';
-import { Professor } from '../modules/professor/schemas/professor.schema';
+import { CreateProfessorDto } from './dtos/create-professor.dto';
+import { UpdateProfessorDto } from './dtos/update-professor.dto';
+import { Professor } from './schemas/professor.schema';
 import { LoggerService } from '../common/logger/logger.service';
 
 @Controller('professor')
